@@ -20,6 +20,17 @@
 
 <body>
     <div>
+        <p>
+            Nama : <?php echo e($nama); ?>
+
+            Alamat : <?php echo e($alamat); ?>
+
+            Umur : <?php echo e($umur); ?>
+
+        </p>
+    </div>
+
+    <div>
         <!-- Navbar-->
         <div>
             <div class="navbar navbar-expand-xl navbar-light bg-light border-bottom sticky-top">

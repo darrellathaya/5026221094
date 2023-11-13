@@ -16,6 +16,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('blog2', function() {
+    return view('blog');
+});
+
 Route::get('week1', function () {
     return view('hello');
 });
@@ -57,4 +61,14 @@ Route::get('week10', function () {
 });
 
 Route::get('perkalian', 'C:\xampp\htdocs\5026221094\app\Http\Controllers@index');
-Route::get('show', 'C:\xampp\htdocs\5026221094\app\Http\Controllers@showBlog');
+Route::get('show', 'App\Http\Controllers\DosenController@showBlog');
+
+Route::get('/pegawai/{nama}', 'App\Http\Controllers\DosenController@showNama');
+
+Route::get('/formulir', 'App\Http\Controllers\DosenController@formulir');
+Route::post('formulir/proses', 'App\Http\Controllers\DosenController@proses');
+
+// route blog
+Route::get('/blog', 'App\Http\Controllers\BlogController@home');
+Route::get('/blog/tentang', 'App\Http\Controllers\BlogController@tentang');
+Route::get('/blog/kontak', 'App\Http\Controllers\BlogController@kontak');
