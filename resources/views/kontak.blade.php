@@ -12,6 +12,11 @@
 
 	<p>Ini Adalah Halaman Kontak</p>
 
+    <a href="/pegawai/tambah"> + Tambah Pegawai Baru</a>
+
+    <br/>
+	<br/>
+
 	<table class = "table">
 		<tr>
 			<td>Nama</td>
@@ -21,7 +26,7 @@
 		<tr>
 			<td>Alamat</td>
 			<td>:</td>
-			<td>ytta</td>
+			<td>Jl. Teknik Kimia, Keputih, Kec. Sukolilo, Surabaya, Jawa Timur 60111</td>
 		</tr>
 		<tr>
 			<td>Email</td>
@@ -41,6 +46,20 @@
             <td>{{ $i }}</td>
         </tr>
         @endfor
+
+        @foreach($pegawai as $p)
+		<tr>
+			<td>{{ $p->pegawai_nama }}</td>
+			<td>{{ $p->pegawai_jabatan }}</td>
+			<td>{{ $p->pegawai_umur }}</td>
+			<td>{{ $p->pegawai_alamat }}</td>
+			<td>
+				<a href="/pegawai/edit/{{ $p->pegawai_id }}">Edit</a>
+				|
+				<a href="/pegawai/hapus/{{ $p->pegawai_id }}">Hapus</a>
+			</td>
+		</tr>
+		@endforeach
 
 	</table>
 
