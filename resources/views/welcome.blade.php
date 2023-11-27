@@ -20,14 +20,6 @@
 
 <body>
     <div>
-        <p>
-            Nama : {{ $nama }}
-            Alamat : {{ $alamat }}
-            Umur : {{ $umur }}
-        </p>
-    </div>
-
-    <div>
         <!-- Navbar-->
         <div>
             <div class="navbar navbar-expand-xl navbar-light bg-light border-bottom sticky-top">

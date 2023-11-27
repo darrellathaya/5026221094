@@ -1,13 +1,27 @@
 <!DOCTYPE html>
+
 <html>
     <head>
-        <title> Tutorial Laravel = www.malasngoding.com </title>
-    </head>
-    <body>
-        <h3>www.malasngoding.com</h3>
-        <p>Seri Tutorial Laravel Lengkap Dari Dasar</p>
-        <p>Ini adalah view blog. ada di route blog</p>
+        <title>
+            Sistem Informasi ITS - Pemrograman Web (D) Week 9
+        </title>
 
-        <a href="/pegawai/{{ date(' D M Y')}}">Klik Disini</a>
+        <link rel = "icon" type = "image/x-icon" href = "{{ asset('img/qb.png') }}"/>
+    </head>
+
+    <body>
+    	<h3>
+            www.malasngoding.com
+        </h3>
+
+	    <p>
+            Seri Tutorial Laravel Lengkap Dari Dasar
+        </p>
+
+        <p>
+            Ini adalah view blog, ada di route blog.
+        </p>
+
+        <a href = "/pegawai/{{ date('D M Y') }}"> Klik disini </a>
     </body>
 </html>

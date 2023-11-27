@@ -1,50 +1,55 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Tutorial Membuat CRUD Pada Laravel - www.malasngoding.com</title>
-    </head>
+<?php
 
-    <body>
+use Illuminate\Contracts\Http\Kernel;
+use Illuminate\Http\Request;
 
-    @extends('master2')
-    @section('title', "Database Pegawai")
+define('LARAVEL_START', microtime(true));
 
-    @section('judul_halaman')
-        <h2> www.malasngoding.com </h2>
-        <h3> Data Pegawai </h3>
+/*
+|--------------------------------------------------------------------------
+| Check If The Application Is Under Maintenance
+|--------------------------------------------------------------------------
+|
+| If the application is in maintenance / demo mode via the "down" command
+| we will load this file so that any pre-rendered content can be shown
+| instead of starting the framework, which could cause an exception.
+|
+*/
 
-        <a href = "/pegawai/tambah"> + Tambah Pegawai Baru</a>
+if (file_exists($maintenance = __DIR__.'/../storage/framework/maintenance.php')) {
+    require $maintenance;
+}
 
-        <br/>
-        <br/>
-    @endsection
+/*
+|--------------------------------------------------------------------------
+| Register The Auto Loader
+|--------------------------------------------------------------------------
+|
+| Composer provides a convenient, automatically generated class loader for
+| this application. We just need to utilize it! We'll simply require it
+| into the script here so we don't need to manually load our classes.
+|
+*/
 
-    @section('konten')
-        <table class = "table table-striped table-hover">
-            <tr>
-                <th> Nama </th>
-                <th> Jabatan </th>
-                <th> Umur </th>
-                <th> Alamat </th>
-                <th> Opsi </th>
-            </tr>
+require __DIR__.'/../vendor/autoload.php';
 
-            @foreach($pegawai as $p)
-            <tr>
-                <td> {{ $p -> pegawai_nama }} </td>
-                <td> {{ $p -> pegawai_jabatan }} </td>
-                <td> {{ $p -> pegawai_umur }} </td>
-                <td> {{ $p -> pegawai_alamat }} </td>
+/*
+|--------------------------------------------------------------------------
+| Run The Application
+|--------------------------------------------------------------------------
+|
+| Once we have the application, we can handle the incoming request using
+| the application's HTTP kernel. Then, we will send the response back
+| to this client's browser, allowing them to enjoy our application.
+|
+*/
 
-                <td>
-                    <a href = "/pegawai/edit/{{ $p -> pegawai_id }}"> Edit </a>|
-                    <a href = "/pegawai/hapus/{{ $p -> pegawai_id }}"> Hapus </a>
-                </td>
-            </tr>
-            @endforeach
-        </table>
-    @endsection
-    ({ $pegawai->links})
+$app = require_once __DIR__.'/../bootstrap/app.php';
 
-    </body>
-</html>
+$kernel = $app->make(Kernel::class);
+
+$response = $kernel->handle(
+    $request = Request::capture()
+)->send();
+
+$kernel->terminate($request, $response);

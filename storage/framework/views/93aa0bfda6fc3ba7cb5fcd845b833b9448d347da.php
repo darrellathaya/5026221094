@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>
-            @yield('title')
+            <?php echo $__env->yieldContent('title'); ?>
         </title>
 
         <meta charset="utf-8">
@@ -47,14 +47,14 @@
             <br/>
 
             <!-- Bagian judul halaman blog -->
-            @yield('judul_halaman')
+            <?php echo $__env->yieldContent('judul_halaman'); ?>
 
-            @yield('header')
+            <?php echo $__env->yieldContent('header'); ?>
 
-            @yield('isihalaman')
+            <?php echo $__env->yieldContent('isihalaman'); ?>
 
             <!-- Bagian konten blog -->
-            @yield('konten')
+            <?php echo $__env->yieldContent('konten'); ?>
             <br/>
             <br/>
             <hr/>
@@ -67,3 +67,4 @@
         </div>
     </body>
 </html>
+<?php /**PATH C:\xampp\htdocs\5026221094\resources\views/master2.blade.php ENDPATH**/ ?>
