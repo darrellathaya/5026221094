@@ -1,48 +1,50 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Tutorial Membuat CRUD Pada Laravel - www.malasngoding.com</title>
-</head>
-<body>
+    <head>
+        <title>Tutorial Membuat CRUD Pada Laravel - www.malasngoding.com</title>
+    </head>
 
-<@extends('master2')
-@section('title', "Database Pegawai")
+    <body>
 
-@section('judul_halaman')
-    <h2> www.malasngoding.com </h2>
-    <h3> Data Pegawai </h3>
+    @extends('master2')
+    @section('title', "Database Pegawai")
 
-    <a href = "/pegawai/tambah"> + Tambah Pegawai Baru</a>
+    @section('judul_halaman')
+        <h2> www.malasngoding.com </h2>
+        <h3> Data Pegawai </h3>
 
-    <br/>
-    <br/>
-@endsection
+        <a href = "/pegawai/tambah"> + Tambah Pegawai Baru</a>
 
-@section('konten')
-    <table class = "table table-striped table-hover">
-        <tr>
-            <th> Nama </th>
-            <th> Jabatan </th>
-            <th> Umur </th>
-            <th> Alamat </th>
-            <th> Opsi </th>
-        </tr>
+        <br/>
+        <br/>
+    @endsection
 
-        @foreach($pegawai as $p)
-        <tr>
-            <td> {{ $p -> pegawai_nama }} </td>
-            <td> {{ $p -> pegawai_jabatan }} </td>
-            <td> {{ $p -> pegawai_umur }} </td>
-            <td> {{ $p -> pegawai_alamat }} </td>
+    @section('konten')
+        <table class = "table table-striped table-hover">
+            <tr>
+                <th> Nama </th>
+                <th> Jabatan </th>
+                <th> Umur </th>
+                <th> Alamat </th>
+                <th> Opsi </th>
+            </tr>
 
-            <td>
-                <a href = "/pegawai/edit/{{ $p -> pegawai_id }}"> Edit </a>|
-                <a href = "/pegawai/hapus/{{ $p -> pegawai_id }}"> Hapus </a>
-            </td>
-        </tr>
-        @endforeach
-    </table>
-@endsection
+            @foreach($pegawai as $p)
+            <tr>
+                <td> {{ $p -> pegawai_nama }} </td>
+                <td> {{ $p -> pegawai_jabatan }} </td>
+                <td> {{ $p -> pegawai_umur }} </td>
+                <td> {{ $p -> pegawai_alamat }} </td>
 
-</body>
+                <td>
+                    <a href = "/pegawai/edit/{{ $p -> pegawai_id }}"> Edit </a>|
+                    <a href = "/pegawai/hapus/{{ $p -> pegawai_id }}"> Hapus </a>
+                </td>
+            </tr>
+            @endforeach
+        </table>
+    @endsection
+    ({ $pegawai->links})
+
+    </body>
 </html>
