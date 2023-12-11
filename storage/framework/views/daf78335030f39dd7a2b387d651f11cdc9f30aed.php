@@ -9,7 +9,7 @@
         Nilai Kuliah
     </h3>
 
-    <a href = "/nilaikuliah/tambah"> + Nilai Kuliah Baru</a>
+    <a href = "/nilaikuliah/tambah"> + Tambah Nilai Kuliah Baru</a>
 
     <br/>
     <br/>

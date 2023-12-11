@@ -18,10 +18,13 @@
 <?php $__env->startSection('konten'); ?>
     <p> Cari Data Pegawai: </p>
 
-    <form action = "/pegawai/cari" method = "GET">
-        <input class = "form-control" type = "text" name = "cari" placeholder = "Cari pegawai berdasarkan nama ..." value = "<?php echo e(old('cari')); ?>">
-        <input type = "submit" value = "CARI" class = "btn btn-primary">
+    <form action = "/beras/cari" method = "GET">
+        <div class = "input-group">
+            <input class = "form-control" type = "text" name = "cari" placeholder = "Cari beras berdasarkan nama" value = "<?php echo e(old('cari')); ?>">
+            <input type = "submit px-1" value = "CARI" class = "btn btn-primary">
+        </div>
     </form>
+    <br/>
 
     <table class = "table table-striped table-hover">
         <tr>

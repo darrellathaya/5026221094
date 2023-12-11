@@ -71,7 +71,7 @@ Route::get('/blog', 'App\Http\Controllers\DosenController@home');
 Route::get('/blog/tentang', 'App\Http\Controllers\DosenController@tentang');
 Route::get('/blog/kontak', 'App\Http\Controllers\DosenController@kontak');
 
-//route CRUD
+//route CRUD Pegawai
 Route::get('/pegawai','App\Http\Controllers\PegawaiController@index');
 Route::post('/pegawai/store','App\Http\Controllers\PegawaiController@store');
 Route::get('/pegawai/cari','App\Http\Controllers\PegawaiController@cari');
@@ -85,3 +85,19 @@ Route::get('/pegawai/view/{id}','App\Http\Controllers\PegawaiController@view');
 Route::get('/nilaikuliah','App\Http\Controllers\NilaiController@index');
 Route::get('/nilaikuliah/tambah','App\Http\Controllers\NilaiController@tambah');
 Route::post('/nilaikuliah/store','App\Http\Controllers\NilaiController@store');
+
+//route CRUD Beras
+Route::get('/beras','App\Http\Controllers\BerasController@index');
+Route::post('/beras/store','App\Http\Controllers\BerasController@store');
+Route::get('/beras/cari','App\Http\Controllers\BerasController@cari');
+Route::get('/beras/edit/{id}','App\Http\Controllers\BerasController@edit');
+Route::post('/beras/update','App\Http\Controllers\BerasController@update');
+Route::get('/beras/tambah','App\Http\Controllers\BerasController@tambah');
+Route::get('/beras/hapus/{id}','App\Http\Controllers\BerasController@hapus');
+Route::get('/beras/view/{id}','App\Http\Controllers\BerasController@view');
+
+//route CRUD Kategori
+Route::get('/combo','App\Http\Controllers\KategoriController@index');
+Route::post('/combo/store','App\Http\Controllers\KategoriController@store');
+Route::get('/combo/tambah','App\Http\Controllers\KategoriController@tambah');
+Route::get('/combo/view/{id}','App\Http\Controllers\KategoriController@view');

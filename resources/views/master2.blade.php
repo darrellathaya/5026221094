@@ -22,10 +22,18 @@
                 <!-- Links -->
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                    <a class="nav-link" href="/pegawai">Pegawai</a>
+                    <a class="nav-link" href="/pegawai/tambah">Tambah Pegawai</a>
                   </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="/nilaikuliah">Nilai Kuliah</a>
+                    <a class="nav-link" href="/nilaikuliah/tambah">Tambah Nilai Kuliah</a>
+                  </li>
+                  </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="/beras/tambah">Tambah Data Beras</a>
+                  </li>
+                  </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="/combo/tambah">Tambah Kategori</a>
                   </li>
 
                   <!-- Dropdown -->
@@ -36,7 +44,8 @@
                     <div class="dropdown-menu">
                       <a class="dropdown-item" href="/pegawai">Pegawai</a>
                       <a class="dropdown-item" href="/nilaikuliah">Nilai Kuliah</a>
-                      <a class="dropdown-item" href="#">Link 3</a>
+                      <a class="dropdown-item" href="/beras">Data Beras</a>
+                      <a class="dropdown-item" href="/combo/">Kategori</a>
                     </div>
                   </li>
                 </ul>
